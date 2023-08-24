@@ -197,8 +197,7 @@ def display_fields():
 
 
 def quiz_game():
-    display_rules()
-
+    global asked_questions
     display_rules()
 
     round_no = None
@@ -213,6 +212,7 @@ def quiz_game():
 
     rounds = round_no
     while round_no > 0:
+        asked_questions = []
         display_fields()
         round_no -= 1
 
