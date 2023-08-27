@@ -3,6 +3,7 @@ import random
 
 score = 0
 asked_questions = []
+full_correct_answer = ""
 
 
 def generate_random_number():
@@ -35,48 +36,50 @@ def check_performance(round_no, p_score):
 
 
 def check_answer(correct_answer, answer):
-    global score
+    global score, full_correct_answer
     if answer == correct_answer:
         print("*** CORRECT ANSWER ***")
         score = score + 1
         time.sleep(1)
     else:
         print("** WRONG ANSWER **")
-        print(f"The correct answer is {correct_answer.capitalize()}")
+        print(f"The correct answer is {full_correct_answer}")
         time.sleep(1)
 
     print("\n")
 
 
 def display_mcq_qs(my_file):
+    global full_correct_answer
     lines = my_file.readlines()
     question_no = 1
     while question_no < 11:
         random_q = generate_random_number()
-        # print(random_q)
+        print(random_q)
         while random_q in asked_questions:
             random_q = generate_random_number()
         asked_questions.append(random_q)
 
         data = lines[random_q].split("/")
-        questions = data[1]
-        answer_a = data[2]
-        answer_b = data[3]
-        answer_c = data[4]
-        answer_d = data[5]
-        correct_answer = str(data[6]).strip().lower()
+        questions = data[1].strip()
+        answer_a = data[2].strip()
+        answer_b = data[3].strip()
+        answer_c = data[4].strip()
+        answer_d = data[5].strip()
+        answer_symbol = str(data[6]).strip().lower()
+        full_correct_answer = str(data[7]).strip().lower()
         print("*************** Score ******************")
         print(f"                 {score}")
         print(f"============ Question # {question_no} =============")
         print(questions)
         time.sleep(0.5)
-        print("a)", answer_a)
+        print("a) ", answer_a)
         time.sleep(0.5)
-        print("b)", answer_b)
+        print("b) ", answer_b)
         time.sleep(0.5)
-        print("c)", answer_c)
+        print("c) ", answer_c)
         time.sleep(0.5)
-        print("d)", answer_d)
+        print("d) ", answer_d)
         time.sleep(0.5)
 
         answer = str(input("Answer? ")).strip().lower()
@@ -87,18 +90,19 @@ def display_mcq_qs(my_file):
         time.sleep(1)
         print(".")
 
-        check_answer(correct_answer, answer)
+        check_answer(answer_symbol, answer)
         question_no = question_no + 1
     my_file.close()
 
 
-def display_fib__qs(my_file):
+def display_fib_qs(my_file):
+    global full_correct_answer
     lines = my_file.readlines()
 
     question_no = 1
     while question_no < 11:
         random_q = generate_random_number()
-        # print(random_q)
+        print(random_q)
         while random_q in asked_questions:
             random_q = generate_random_number()
         asked_questions.append(random_q)
@@ -119,6 +123,7 @@ def display_fib__qs(my_file):
         print(".")
         time.sleep(1)
         print(".")
+        full_correct_answer = correct_answer
 
         check_answer(correct_answer, answer)
 
@@ -188,7 +193,7 @@ def display_fields():
     elif q_type == 2:
         if choice in range(1, 5):
             file = open(fib_files[choice - 1], "r")
-            display_fib__qs(file)
+            display_fib_qs(file)
         else:
             print("Please enter a valid number!")
 
@@ -203,7 +208,7 @@ def quiz_game():
     round_no = None
     while round_no is None:
         try:
-            round_no = int(input("Enter the Number of Rounds (review rules):"))
+            round_no = int(input("Enter the Number of Rounds (review rules): "))
             if round_no < 2 or round_no > 4:
                 round_no = None
                 print("Review the rules then enter a valid round number.\n")
@@ -226,4 +231,3 @@ def quiz_game():
 
 
 quiz_game()
-
