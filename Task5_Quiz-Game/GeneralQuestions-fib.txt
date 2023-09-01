@@ -34,7 +34,7 @@
 34/ The process by which water vapor turns into liquid water is called/ Condensation
 35/ The planet known as the "Morning Star" or the "Evening Star" is/ Venus
 36/ The first President of the United States was/ George Washington
-37/ The national flower of Japan is/ Sakura (Cherry Blossom)
+37/ The national flower of Japan is/ Sakura
 38/ The smallest bone in the human body is/ Stapes (in the ear)
 39/ The author of the novel "1984" is/ George Orwell
 40/ The gas that human lungs primarily exhale is/ Carbon Dioxide (CO2)
@@ -47,4 +47,4 @@
 47/ The person who discovered penicillin is/ Alexander Fleming
 48/ The national flower of India is/ Lotus
 49/ The year in which the United States landed on the moon is/ 1969
-50/ The capital city of Brazil is/ Brasília
+50/ The capital city of Brazil is/ Brasilia
