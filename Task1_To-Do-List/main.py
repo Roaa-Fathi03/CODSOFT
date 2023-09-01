@@ -1,3 +1,8 @@
+# Python Programming Internship
+# Roaa Fathi
+# Last Submission Date: 5 Sep.
+# To Do List Task
+
 # task_list = {1: 'AI', 2: 'CS', 3: 'DS', 4: 'DL', 5: 'Math', 6: 'PS'}
 task_list = {}
 finished_tasks = {}
@@ -5,6 +10,7 @@ count = len(task_list)
 count_finished = 1
 
 
+# Displays the task list
 def display_task_list():
     print("=========== Task List ====================")
     for i, task in task_list.items():
@@ -13,6 +19,7 @@ def display_task_list():
     print('\n')
 
 
+# Displays the finished task list
 def display_finished_task_list():
     print("=========== Finished Task List ===========")
     for i, task in finished_tasks.items():
@@ -21,6 +28,7 @@ def display_finished_task_list():
     print('\n')
 
 
+# Adds task to the task list
 def add_task():
     print("=========== Add Task =====================")
     task = str(input("Enter your task:"))
@@ -31,6 +39,7 @@ def add_task():
     print("\n")
 
 
+# Updates task in the task list
 def update_task():
     print("=========== Update Task ==================")
     updated_order = int(input("Enter the task order to update: "))
@@ -43,6 +52,7 @@ def update_task():
     print('\n')
 
 
+# Finishes task and add it to the finished task list
 def finish_task():
     print("=========== Finish Task ==================")
     selected_order = int(input("Enter the task order to mark as done: "))
@@ -60,6 +70,7 @@ def finish_task():
     print('\n')
 
 
+# Handles the task list after deleting or finishing task
 def list_counter(task_dict):
     counter = 1
     new_task_list = {}
@@ -69,6 +80,7 @@ def list_counter(task_dict):
     return new_task_list
 
 
+# Deletes task from task list
 def delete_task():
     global task_list
 
@@ -81,9 +93,10 @@ def delete_task():
         task_list = list_counter(task_list)
 
 
+# Displays the main menu and enables inputs
 def display_menu():
     choice = 1
-    while choice < 4:
+    while choice < 5:
         display_task_list()
         display_finished_task_list()
 
@@ -99,11 +112,11 @@ def display_menu():
         print('\n')
 
         if choice == 1:
-            Add_task()
+            add_task()
         elif choice == 2:
-            Update_task()
+            update_task()
         elif choice == 3:
-            Finish_task()
+            finish_task()
         elif choice == 4:
             delete_task()
         elif choice == 5:

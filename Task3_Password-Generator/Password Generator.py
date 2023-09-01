@@ -1,16 +1,21 @@
-## Random Password generator Application
+# Python Programming Internship
+# Roaa Fathi
+# Last Submission Date: 5 Sep.
+# Random Password generator Application
 
 import random
 import string
 
 
+# Generates passwords contains letters, digits and special characters
 def generate_password(length):
     characters = string.ascii_letters + string.digits + string.punctuation
     password = ''.join(random.choice(characters) for _ in range(length))
     return password
 
 
-def Display_rules():
+# Displays the rules of creating password
+def display_rules():
     print("============== Welcome to Generate Password APP ==============")
     print("** Rules of Strong Password: **")
     print("1. At least 8 letters.")
@@ -22,8 +27,9 @@ def Display_rules():
     print("\n")
 
 
-def main_app():
-    Display_rules()
+# Controls the app and enables input
+def password_generator():
+    display_rules()
     try:
         password_length = int(input("Enter the desired password length: "))
         if password_length <= 0:
@@ -38,4 +44,4 @@ def main_app():
         print("Please enter a valid positive integer for the password length.")
 
 
-main_app()
+password_generator()

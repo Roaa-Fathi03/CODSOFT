@@ -1,3 +1,8 @@
+# Python Programming Internship
+# Roaa Fathi
+# Last Submission Date: 5 Sep.
+# Quiz Game
+
 import time
 import random
 
@@ -6,10 +11,12 @@ asked_questions = []
 full_correct_answer = ""
 
 
+# Generates random number to pick a question from the files specified
 def generate_random_number():
     return random.randint(0, 49)
 
 
+# Checks performance and displays ranks
 def check_performance(round_no, p_score):
     if round_no == 2:
         if p_score >= int(.85 * 20):
@@ -35,6 +42,7 @@ def check_performance(round_no, p_score):
             print("You are NEWBIE, try better next time!")
 
 
+# Checks the player answer and the correct answer
 def check_answer(correct_answer, answer):
     global score, full_correct_answer
     if answer == correct_answer:
@@ -49,13 +57,13 @@ def check_answer(correct_answer, answer):
     print("\n")
 
 
+# Displays mcq questions
 def display_mcq_qs(my_file):
     global full_correct_answer
     lines = my_file.readlines()
     question_no = 1
     while question_no < 11:
         random_q = generate_random_number()
-        print(random_q)
         while random_q in asked_questions:
             random_q = generate_random_number()
         asked_questions.append(random_q)
@@ -95,6 +103,7 @@ def display_mcq_qs(my_file):
     my_file.close()
 
 
+# Displays fill in blanks questions
 def display_fib_qs(my_file):
     global full_correct_answer
     lines = my_file.readlines()
@@ -102,7 +111,6 @@ def display_fib_qs(my_file):
     question_no = 1
     while question_no < 11:
         random_q = generate_random_number()
-        print(random_q)
         while random_q in asked_questions:
             random_q = generate_random_number()
         asked_questions.append(random_q)
@@ -132,6 +140,7 @@ def display_fib_qs(my_file):
     my_file.close()
 
 
+# displays rules of the game
 def display_rules():
     print("======================== WELCOME TO QUIZ! ========================")
     print("======================== Game Rules  ============================= \n"
@@ -144,6 +153,7 @@ def display_rules():
           "==================================================================\n")
 
 
+# Displays topics of the questions
 def display_fields():
     q_type = None
     while q_type is None:
@@ -201,6 +211,7 @@ def display_fields():
         print("Enter a valid choice!!")
 
 
+# Controls game flow and displays score
 def quiz_game():
     global asked_questions
     display_rules()
