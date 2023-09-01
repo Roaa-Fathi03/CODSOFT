@@ -1,3 +1,8 @@
+# Python Programming Internship
+# Roaa Fathi
+# Last Submission Date: 5 Sep.
+# Rock Paper Scissors Game
+
 import tkinter as tk
 import tkinter.font as tk_font
 
@@ -122,7 +127,7 @@ def check_winner():
         winner_lbl["text"] = "** TIE MODE **"
 
     elif user_score > pc_score:
-        winner_lbl["text"] = "** CONGRATULATIONS, THE PLAYER is THE WINNER **"
+        winner_lbl["text"] = "** CONGRATULATIONS, YOU ARE THE WINNER **"
 
     elif user_score < pc_score:
         winner_lbl["text"] = "** THE PC is THE WINNER **"
@@ -178,36 +183,36 @@ def check_play():
 
 # Create labels
 # Score panel labels
-user_lbl = tk.Label(user_score_frame, text="User Score", fg="#75AE97", bg="black", font=score_font)
-pc_lbl = tk.Label(pc_score_frame, text="PC Score", fg="#75AE97", bg="black", font=score_font)
-u_score_lbl = tk.Label(user_score_frame, text=str(user_score), fg="#75AE97", bg="black", font=score_font)
-p_score_lbl = tk.Label(pc_score_frame, text=str(pc_score), fg="#75AE97", bg="black", font=score_font)
+user_lbl = tk.Label(user_score_frame, text="Your Score", fg="#ff9933", bg="black", font=score_font)
+pc_lbl = tk.Label(pc_score_frame, text="PC Score", fg="#ff9933", bg="black", font=score_font)
+p_score_lbl = tk.Label(pc_score_frame, text=str(pc_score), fg="#ff9933", bg="black", font=score_font)
+u_score_lbl = tk.Label(user_score_frame, text=str(user_score), fg="#ff9933", bg="black", font=score_font)
 
 # User choice label and buttons
 choice_lbl = tk.Label(choice_frame, text="CHOOSE...", fg="#D3E6CE", bg="black", font=custom_font)
-btn_rock = tk.Button(choice_frame, text="   ROCK   ", command=rock, fg="#D3E6CE", bg="#008080", font=custom_font)
-btn_paper = tk.Button(choice_frame, text="  PAPER   ", command=paper, fg="#D3E6CE", bg="#008080", font=custom_font)
-btn_scissors = tk.Button(choice_frame, text=" SCISSORS ", command=scissors, fg="#D3E6CE", bg="#008080", font=custom_font)
+btn_rock = tk.Button(choice_frame, text="   ROCK   ", command=rock, fg="#D3E6CE", bg="#0E65A3", font=custom_font)
+btn_paper = tk.Button(choice_frame, text="  PAPER   ", command=paper, fg="#D3E6CE", bg="#0E65A3", font=custom_font)
+btn_scissors = tk.Button(choice_frame, text=" SCISSORS ", command=scissors, fg="#D3E6CE", bg="#0E65A3", font=custom_font)
 
 # Round labels
-round_num = tk.Label(choice_frame, text=" 5 Rounds ", fg="#75AE97", bg="black", font=score_font)
+round_num = tk.Label(choice_frame, text=" 5 Rounds ", fg="#ff9933", bg="black", font=score_font)
 round_lbl = tk.Label(choice_frame, text="Round " + str(r), fg="#D3E6CE", bg="black", font=custom_font)
 
 # PC choice labels
 c_pc_lbl = tk.Label(choice_frame, text="Computer chooses...", fg="#D3E6CE", bg="black", font=custom_font)
-pc_choice_lbl = tk.Label(choice_frame, text="", fg="#D3E6CE", bg="#008080", font=custom_font)
+pc_choice_lbl = tk.Label(choice_frame, text="", fg="#D3E6CE", bg="#0E65A3", font=custom_font)
 
 # winner label
-winner_lbl = tk.Label(screen, text="", fg="#C60028", bg="black", font=w_custom_font)
+winner_lbl = tk.Label(screen, text="", fg="#ff4d4d", bg="black", font=w_custom_font)
 
 # Play again label
 play_lbl = tk.Label(ask, text="    Play again?     ", fg="#D3E6CE", bg="black", font=custom_font)
-y_btn = tk.Button(ask, text="    Yes    ", command=y_play, fg="#D3E6CE", bg="#008080", font=custom_font)
-n_btn = tk.Button(ask, text="    No     ", command=n_play, fg="#D3E6CE", bg="#008080", font=custom_font)
+y_btn = tk.Button(ask, text="    Yes    ", command=y_play, fg="#D3E6CE", bg="#0E65A3", font=custom_font)
+n_btn = tk.Button(ask, text="    No     ", command=n_play, fg="#D3E6CE", bg="#0E65A3", font=custom_font)
 
 # End label and button
 end_lbl = tk.Label(end, text="** Thanks for choosing our game! **", fg="#66B266", bg="black", font=custom_font)
-end_btn = tk.Button(end, text="END", command=quit, fg="white", bg="#008080", font=custom_font)
+end_btn = tk.Button(end, text="END", command=quit, fg="white", bg="#0E65A3", font=custom_font)
 
 # Layout within frames using grid
 # Score panel grid
