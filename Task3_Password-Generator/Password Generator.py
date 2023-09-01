@@ -30,18 +30,20 @@ def display_rules():
 # Controls the app and enables input
 def password_generator():
     display_rules()
-    try:
-        password_length = int(input("Enter the desired password length: "))
-        if password_length <= 0:
-            print("Password length should be a positive integer.")
-        elif password_length < 8:
-            print("Strong Password length should be at least 8.")
-        else:
-            password = generate_password(password_length)
-            print("Generated Password:", password)
+    while True:
+        try:
+            password_length = int(input("Enter the desired password length (to exit enter -1): "))
+            if password_length < 0:
+                print("\n** Thanks for using our App. **")
+                break
+            elif password_length < 8:
+                print("Strong Password length should be at least 8.\n")
+            else:
+                password = generate_password(password_length)
+                print("Generated Password:", password)
 
-    except ValueError:
-        print("Please enter a valid positive integer for the password length.")
+        except ValueError:
+            print("Please enter a valid positive integer for the password length.\n")
 
 
 password_generator()
